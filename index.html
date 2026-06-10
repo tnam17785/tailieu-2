@@ -1,242 +1,131 @@
-<!DOCTYPE html>
-<html lang="vi">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<div class="sidebar">
+    <h2>📚 Nam IT</h2>
 
-<title>StudyHub Pro</title>
+    <a href="#basic">Cơ bản</a>
+    <a href="#stl">STL</a>
+    <a href="#algo">Thuật toán</a>
+    <a href="#graph">Đồ thị</a>
+    <a href="#dp">DP</a>
+    <a href="#advanced">Nâng cao</a>
 
-<style>
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-    font-family:Segoe UI,sans-serif;
-}
-
-html{
-    scroll-behavior:smooth;
-}
-
-body{
-    background:#f5f5f5;
-    color:#222;
-    transition:.3s;
-}
-
-.dark{
-    background:#111827;
-    color:white;
-}
-
-header{
-    background:linear-gradient(135deg,#2563eb,#7c3aed);
-    color:white;
-    text-align:center;
-    padding:80px 20px;
-}
-
-header h1{
-    font-size:3rem;
-}
-
-header p{
-    margin-top:10px;
-}
-
-nav{
-    position:sticky;
-    top:0;
-    background:#1e40af;
-    padding:15px;
-    text-align:center;
-    z-index:999;
-}
-
-nav a{
-    color:white;
-    text-decoration:none;
-    margin:0 15px;
-    font-weight:bold;
-}
-
-.search-box{
-    text-align:center;
-    margin:30px;
-}
-
-.search-box input{
-    width:80%;
-    max-width:500px;
-    padding:12px;
-    border-radius:10px;
-    border:none;
-    box-shadow:0 0 10px rgba(0,0,0,.15);
-}
-
-section{
-    padding:50px 10%;
-}
-
-.card{
-    background:white;
-    padding:20px;
-    border-radius:15px;
-    margin-top:20px;
-    box-shadow:0 5px 15px rgba(0,0,0,.1);
-    transition:.3s;
-}
-
-.dark .card{
-    background:#1f2937;
-}
-
-.card:hover{
-    transform:translateY(-8px);
-}
-
-.btn{
-    display:inline-block;
-    margin-top:10px;
-    text-decoration:none;
-    color:white;
-    background:#2563eb;
-    padding:10px 15px;
-    border-radius:10px;
-}
-
-.mode-btn{
-    position:fixed;
-    right:20px;
-    bottom:20px;
-    border:none;
-    background:#2563eb;
-    color:white;
-    width:60px;
-    height:60px;
-    border-radius:50%;
-    font-size:20px;
-    cursor:pointer;
-}
-
-footer{
-    background:#0f172a;
-    color:white;
-    text-align:center;
-    padding:20px;
-}
-</style>
-</head>
-
-<body>
-
-<header>
-    <h1>📚 StudyHub Pro</h1>
-    <p>Kho tài liệu học tập miễn phí</p>
-</header>
-
-<nav>
-    <a href="#toan">Toán</a>
-    <a href="#ly">Lý</a>
-    <a href="#tin">Tin</a>
-</nav>
-
-<div class="search-box">
-    <input
-        type="text"
-        id="search"
-        placeholder="🔍 Tìm tài liệu..."
-        onkeyup="searchDocs()"
-    >
+    <button onclick="toggleTheme()">
+        🌙 Tối / Sáng
+    </button>
 </div>
 
-<section id="toan">
-<h2>📐 Toán</h2>
+<div class="main">
 
-<div class="card doc">
-    <h3>Khảo sát hàm số</h3>
-    <p>Tổng hợp công thức lớp 12.</p>
+<input
+    type="text"
+    id="search"
+    placeholder="🔍 Tìm tài liệu..."
+    onkeyup="searchDocs()"
+>
+
+<p id="counter"></p>
+
+<!-- CƠ BẢN -->
+<div class="category" id="basic">
+<h2>Cơ bản</h2>
+
+<div class="grid">
+
+<div class="card"><h3>Mảng 1 chiều</h3><a href="#">PDF</a></div>
+<div class="card"><h3>Mảng 2 chiều</h3><a href="#">PDF</a></div>
+<div class="card"><h3>Xâu ký tự</h3><a href="#">PDF</a></div>
+<div class="card"><h3>Đệ quy</h3><a href="#">PDF</a></div>
+<div class="card"><h3>Sắp xếp</h3><a href="#">PDF</a></div>
+<div class="card"><h3>Tìm kiếm</h3><a href="#">PDF</a></div>
+
+</div>
 </div>
 
-<div class="card doc">
-    <h3>Nguyên hàm - Tích phân</h3>
-    <p>Tài liệu ôn thi THPT.</p>
+<!-- STL -->
+<div class="category" id="stl">
+<h2>STL</h2>
+
+<div class="grid">
+
+<div class="card"><h3>Vector</h3><a href="#">PDF</a></div>
+<div class="card"><h3>Pair</h3><a href="#">PDF</a></div>
+<div class="card"><h3>Set</h3><a href="#">PDF</a></div>
+<div class="card"><h3>Map</h3><a href="#">PDF</a></div>
+<div class="card"><h3>Stack</h3><a href="#">PDF</a></div>
+<div class="card"><h3>Queue</h3><a href="#">PDF</a></div>
+<div class="card"><h3>Priority Queue</h3><a href="#">PDF</a></div>
+
+</div>
 </div>
 
-</section>
+<!-- THUẬT TOÁN -->
+<div class="category" id="algo">
+<h2>Thuật toán phổ biến</h2>
 
-<section id="ly">
-<h2>⚡ Vật Lý</h2>
+<div class="grid">
 
-<div class="card doc">
-    <h3>Dao động điều hòa</h3>
-    <p>Lý thuyết và bài tập.</p>
+<div class="card"><h3>Binary Search</h3><a href="#">PDF</a></div>
+<div class="card"><h3>Two Pointers</h3><a href="#">PDF</a></div>
+<div class="card"><h3>Sliding Window</h3><a href="#">PDF</a></div>
+<div class="card"><h3>Prefix Sum</h3><a href="#">PDF</a></div>
+<div class="card"><h3>Difference Array</h3><a href="#">PDF</a></div>
+<div class="card"><h3>Greedy</h3><a href="#">PDF</a></div>
+
+</div>
 </div>
 
-<div class="card doc">
-    <h3>Sóng cơ</h3>
-    <p>Tóm tắt kiến thức.</p>
+<!-- ĐỒ THỊ -->
+<div class="category" id="graph">
+<h2>Đồ thị</h2>
+
+<div class="grid">
+
+<div class="card"><h3>BFS</h3><a href="#">PDF</a></div>
+<div class="card"><h3>DFS</h3><a href="#">PDF</a></div>
+<div class="card"><h3>Dijkstra</h3><a href="#">PDF</a></div>
+<div class="card"><h3>Floyd-Warshall</h3><a href="#">PDF</a></div>
+<div class="card"><h3>Bellman-Ford</h3><a href="#">PDF</a></div>
+<div class="card"><h3>Topological Sort</h3><a href="#">PDF</a></div>
+<div class="card"><h3>DSU</h3><a href="#">PDF</a></div>
+<div class="card"><h3>Kruskal</h3><a href="#">PDF</a></div>
+<div class="card"><h3>Prim</h3><a href="#">PDF</a></div>
+
+</div>
 </div>
 
-</section>
+<!-- DP -->
+<div class="category" id="dp">
+<h2>Dynamic Programming</h2>
 
-<section id="tin">
-<h2>💻 Tin Học</h2>
+<div class="grid">
 
-<div class="card doc">
-    <h3>BFS</h3>
-    <p>Tìm đường đi ngắn nhất.</p>
+<div class="card"><h3>DP cơ bản</h3><a href="#">PDF</a></div>
+<div class="card"><h3>Knapsack</h3><a href="#">PDF</a></div>
+<div class="card"><h3>LIS</h3><a href="#">PDF</a></div>
+<div class="card"><h3>LCS</h3><a href="#">PDF</a></div>
+<div class="card"><h3>Bitmask DP</h3><a href="#">PDF</a></div>
+<div class="card"><h3>Digit DP</h3><a href="#">PDF</a></div>
+<div class="card"><h3>Tree DP</h3><a href="#">PDF</a></div>
+
+</div>
 </div>
 
-<div class="card doc">
-    <h3>Binary Search</h3>
-    <p>Chặt nhị phân trên đáp án.</p>
+<!-- NÂNG CAO -->
+<div class="category" id="advanced">
+<h2>Nâng cao</h2>
+
+<div class="grid">
+
+<div class="card"><h3>Segment Tree</h3><a href="#">PDF</a></div>
+<div class="card"><h3>Fenwick Tree (BIT)</h3><a href="#">PDF</a></div>
+<div class="card"><h3>Sparse Table</h3><a href="#">PDF</a></div>
+<div class="card"><h3>Trie</h3><a href="#">PDF</a></div>
+<div class="card"><h3>Hashing</h3><a href="#">PDF</a></div>
+<div class="card"><h3>KMP</h3><a href="#">PDF</a></div>
+<div class="card"><h3>Z Function</h3><a href="#">PDF</a></div>
+<div class="card"><h3>Mo's Algorithm</h3><a href="#">PDF</a></div>
+<div class="card"><h3>Binary Lifting</h3><a href="#">PDF</a></div>
+
+</div>
 </div>
 
-<div class="card doc">
-    <h3>Dynamic Programming</h3>
-    <p>Quy hoạch động.</p>
 </div>
-
-</section>
-
-<footer>
-    © 2026 StudyHub Pro
-</footer>
-
-<button class="mode-btn" onclick="toggleMode()">
-🌙
-</button>
-
-<script>
-
-function toggleMode(){
-    document.body.classList.toggle("dark");
-}
-
-function searchDocs(){
-
-    let keyword =
-    document.getElementById("search")
-    .value.toLowerCase();
-
-    let docs =
-    document.querySelectorAll(".doc");
-
-    docs.forEach(doc=>{
-
-        let text =
-        doc.innerText.toLowerCase();
-
-        if(text.includes(keyword))
-            doc.style.display="block";
-        else
-            doc.style.display="none";
-    });
-
-}
-
-</script>
-
-</body>
-</html>
