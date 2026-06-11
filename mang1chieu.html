@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mảng 1 Chiều - IT Docs</title>
+<style>
+:root{
+--bg:#071633;--sidebar:#1a2742;--card:#1d2b46;--text:#fff;--primary:#4d8dff;--border:#31466e;
+}
+body.light{
+--bg:#f5f7fb;--sidebar:#fff;--card:#fff;--text:#222;--primary:#2563eb;--border:#d6ddeb;
+}
+*{
+margin:0;padding:0;box-sizing:border-box;font-family:Segoe UI,sans-serif;
+transition:background-color .35s,color .35s,border-color .35s,box-shadow .35s;
+}
+body{background:var(--bg);color:var(--text);display:flex}
+.sidebar{width:260px;min-height:100vh;background:var(--sidebar);padding:20px;position:fixed}
+.logo{font-size:32px;font-weight:bold;margin-bottom:25px}
+.menu a{display:block;color:var(--text);text-decoration:none;padding:12px;border-radius:10px;margin:6px 0}
+.menu a:hover{background:rgba(255,255,255,.08)}
+.theme-btn{margin-top:25px;width:100%;padding:12px;border:none;border-radius:10px;cursor:pointer;background:#3b4f72;color:white}
+.main{margin-left:260px;padding:40px;width:100%}
+.search{width:100%;padding:15px;border-radius:12px;border:1px solid var(--border);background:var(--card);color:var(--text);margin-bottom:20px}
+.card{background:var(--card);padding:25px;border-radius:18px;margin-bottom:20px;box-shadow:0 4px 15px rgba(0,0,0,.2)}
+.code{background:#0d1117;color:#58a6ff;padding:15px;border-radius:12px;overflow:auto;margin-top:10px}
+h1,h2{margin-bottom:10px}
+li{margin-left:20px;line-height:1.8}
+.top{position:fixed;bottom:20px;right:20px;padding:12px 16px;border:none;border-radius:50%;background:var(--primary);color:white}
+</style>
+</head>
+<body>
+<div class="sidebar">
+<div class="logo">📚 IT</div>
+<div class="menu">
+<a href="#khaibao">Khai báo</a>
+<a href="#nhapxuat">Nhập xuất</a>
+<a href="#maxmin">Max Min</a>
+<a href="#timkiem">Tìm kiếm</a>
+<a href="#sort">Sắp xếp</a>
+<a href="#prefix">Prefix Sum</a>
+<a href="#twop">Two Pointers</a>
+<a href="#slide">Sliding Window</a>
+</div>
+<button class="theme-btn" onclick="toggleTheme()"><span id="themeIcon">🌙</span> <span id="themeText">Dark Mode</span></button>
+</div>
+
+<div class="main">
+<h1>Mảng 1 Chiều</h1>
+<input class="search" placeholder="🔍 Tìm kiếm..." onkeyup="searchContent(this.value)">
+
+<div class="card" id="khaibao">
+<h2>Khai báo</h2>
+<div class="code">int a[100005];</div>
+</div>
+
+<div class="card" id="nhapxuat">
+<h2>Nhập xuất</h2>
+<div class="code">for(int i=0;i&lt;n;i++) cin&gt;&gt;a[i];
+for(int i=0;i&lt;n;i++) cout&lt;&lt;a[i]&lt;&lt;' ';</div>
+</div>
+
+<div class="card" id="maxmin">
+<h2>Tìm Max Min</h2>
+<div class="code">int mx=*max_element(a,a+n);
+int mn=*min_element(a,a+n);</div>
+</div>
+
+<div class="card" id="timkiem">
+<h2>Tìm kiếm tuyến tính</h2>
+<div class="code">for(int i=0;i&lt;n;i++)
+ if(a[i]==x){ cout&lt;&lt;i; break; }</div>
+</div>
+
+<div class="card" id="sort">
+<h2>Sắp xếp</h2>
+<div class="code">sort(a,a+n);</div>
+</div>
+
+<div class="card" id="prefix">
+<h2>Prefix Sum</h2>
+<div class="code">pre[0]=0;
+for(int i=1;i&lt;=n;i++)
+ pre[i]=pre[i-1]+a[i];</div>
+</div>
+
+<div class="card" id="twop">
+<h2>Two Pointers</h2>
+<ul>
+<li>Tìm đoạn có tổng bằng k</li>
+<li>Đếm cặp thỏa mãn điều kiện</li>
+<li>Mảng đã sắp xếp</li>
+</ul>
+</div>
+
+<div class="card" id="slide">
+<h2>Sliding Window</h2>
+<ul>
+<li>Tổng lớn nhất độ dài k</li>
+<li>Đoạn con dài nhất</li>
+<li>Đếm đoạn thỏa mãn</li>
+</ul>
+</div>
+
+<div class="card">
+<h2>Bài tập nên luyện</h2>
+<ul>
+<li>Tổng mảng</li>
+<li>Max/Min</li>
+<li>Đếm số nguyên tố</li>
+<li>Prefix Sum</li>
+<li>Two Pointers</li>
+<li>Sliding Window</li>
+<li>Kadane</li>
+</ul>
+</div>
+</div>
+
+<button class="top" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</button>
+
+<script>
+function toggleTheme(){
+document.body.classList.toggle("light");
+const light=document.body.classList.contains("light");
+document.getElementById("themeIcon").textContent=light?"☀️":"🌙";
+document.getElementById("themeText").textContent=light?"Light Mode":"Dark Mode";
+localStorage.setItem("theme",light?"light":"dark");
+}
+if(localStorage.getItem("theme")==="light"){
+document.body.classList.add("light");
+}
+function searchContent(k){
+k=k.toLowerCase();
+document.querySelectorAll(".card").forEach(c=>{
+c.style.display=c.innerText.toLowerCase().includes(k)?"block":"none";
+});
+}
+</script>
+</body>
+</html>
