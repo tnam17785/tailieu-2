@@ -23,9 +23,3 @@ function searchDocs() {
 
     document.getElementById("counter").innerHTML = "📄 Tìm thấy: " + count + " tài liệu";
 }
-
-// Tự động đếm và hiển thị tổng số tài liệu khi vừa tải xong trang web
-window.onload = () => {
-    let cards = document.querySelectorAll(".card");
-    document.getElementById("counter").innerHTML = "📄 Tổng số: " + cards.length + " tài liệu";
-};
