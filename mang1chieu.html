@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>1D-Array</title>
+    <link rel="stylesheet" href="style.css"> <!-- Đường dẫn tới file CSS của bạn -->
+    <style>
+        /* Bổ sung một chút cho thẻ code để hiển thị cú pháp đẹp hơn */
+        code {
+            background: #e2e8f0;
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-family: 'Courier New', Courier, monospace;
+            font-size: 14px;
+        }
+        body.dark code {
+            background: #334155;
+            color: #f1f5f9;
+        }
+        pre {
+            background: #1e293b;
+            color: #f8fafc;
+            padding: 12px;
+            border-radius: 8px;
+            overflow-x: auto;
+            font-size: 13px;
+            margin: 10px 0;
+        }
+        body.dark pre {
+            background: #0f172a;
+            border: 1px solid #334155;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- THANH MENU BÊN TRÁI (SIDEBAR) -->
+    <aside class="sidebar">
+        <h2>Mảng 1 Chiều</h2>
+        <nav>
+            <a href="#khai-niem">1. Khái Niệm Cơ Bản</a>
+            <a href="#thao-tac">2. Thao Tác Cơ Bản</a>
+            <a href="#thuat-toan">3. Thuật Toán Phổ Biến</a>
+        </nav>
+        <button id="theme-toggle">Đổi Chế Độ Nền</button>
+    </aside>
+
+    <!-- VÙNG NỘI DUNG CHÍNH (MAIN CONTENT) -->
+    <main class="main">
+        
+        <!-- Ô TÌM KIẾM -->
+        <input type="search" id="search" placeholder="Tìm kiếm từ khóa (khai báo, duyệt mảng, tìm kiếm...)...">
+
+        <!-- CHUYÊN MỤC 1: KHÁI NIỆM -->
+        <section id="khai-niem" class="category">
+            <h2>1. Khái Niệm & Khai Báo</h2>
+            <div class="grid">
+                
+                <article class="card">
+                    <div>
+                        <h3>Mảng 1 chiều là gì?</h3>
+                        <p>Là một dãy các phần tử có <strong>cùng kiểu dữ liệu</strong>, được lưu trữ liên tiếp nhau trong bộ nhớ máy tính.</p>
+                    </div>
+                    <a href="https://wikipedia.org" target="_blank">Đọc thêm</a>
+                </article>
+
+                <article class="card">
+                    <div>
+                        <h3>Cú pháp Khai báo (C++)</h3>
+                        <p>Công thức chung để tạo mảng:</p>
+                        <pre><code>kiểu_dữ_liệu tên_mảng[số_phần_tử];
+// Ví dụ:
+int snguyen[100];</code></pre>
+                    </div>
+                    <a href="#">Xem ví dụ</a>
+                </article>
+
+                <article class="card">
+                    <div>
+                        <h3>Chỉ số mảng (Index)</h3>
+                        <p>Mảng luôn bắt đầu từ chỉ số <code>0</code>. Phần tử cuối cùng của mảng có chỉ số là <code>n - 1</code>.</p>
+                    </div>
+                    <a href="#">Hình minh họa</a>
+                </article>
+
+            </div>
+        </section>
+
+        <!-- CHUYÊN MỤC 2: CÁC THAO TÁC -->
+        <section id="thao-tac" class="category">
+            <h2>2. Các Thao Tác Cơ Bản</h2>
+            <div class="grid">
+
+                <article class="card">
+                    <div>
+                        <h3>Nhập / Xuất mảng</h3>
+                        <p>Sử dụng vòng lặp <code>for</code> hoặc <code>while</code> để duyệt qua từng chỉ số từ 0 đến n-1 nhằm nhập hoặc in giá trị.</p>
+                    </div>
+                    <a href="#">Xem code mẫu</a>
+                </article>
+
+                <article class="card">
+                    <div>
+                        <h3>Truy xuất phần tử</h3>
+                        <p>Để lấy hoặc thay đổi giá trị tại một vị trí, ta dùng cú pháp: <code>tên_mảng[vị_trí]</code>.</p>
+                    </div>
+                    <a href="#">Thử nghiệm</a>
+                </article>
+
+            </div>
+        </section>
+
+        <!-- CHUYÊN MỤC 3: THUẬT TOÁN -->
+        <section id="thuat-toan" class="category">
+            <h2>3. Thuật Toán Trên Mảng</h2>
+            <div class="grid">
+
+                <article class="card">
+                    <div>
+                        <h3>Tìm Kiếm Giá Trị</h3>
+                        <p>Thuật toán tìm kiếm tuyến tính (duyệt từ đầu đến cuối) hoặc tìm kiếm nhị phân (áp dụng cho mảng đã sắp xếp).</p>
+                    </div>
+                    <a href="#">Xem thuật toán</a>
+                </article>
+
+                <article class="card">
+                    <div>
+                        <h3>Sắp Xếp Mảng</h3>
+                        <p>Đổi chỗ các phần tử để mảng tăng dần hoặc giảm dần. Các thuật toán phổ biến: Bubble Sort, Interchange Sort, Quick Sort.</p>
+                    </div>
+                    <a href="#">Xem thuật toán</a>
+                </article>
+
+                <article class="card">
+                    <div>
+                        <h3>Tính Toán Trực Tiếp</h3>
+                        <p>Tìm phần tử lớn nhất (Max), nhỏ nhất (Min), tính tổng các phần tử, hoặc đếm các số thỏa mãn điều kiện (ví dụ: số chẵn).</p>
+                    </div>
+                    <a href="#">Xem thuật toán</a>
+                </article>
+
+            </div>
+        </section>
+
+    </main>
+
+    <!-- SCRIPT CHUYỂN ĐỔI GIAO DIỆN -->
+    <script>
+        const toggleBtn = document.getElementById('theme-toggle');
+        toggleBtn.addEventListener('click', () => {
+            document.body.classList.toggle('dark');
+        });
+    </script>
+</body>
+</html>
