@@ -20,5 +20,4 @@ function searchDocs() {
         }
     });
 
-    document.getElementById("counter").innerHTML = "📄 Tìm thấy: " + count + " tài liệu";
 }
